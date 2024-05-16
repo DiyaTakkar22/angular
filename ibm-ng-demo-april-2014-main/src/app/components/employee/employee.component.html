@@ -1,0 +1,19 @@
+<p>employee works!</p><div>
+    <button (click)="getAllEmps()">Get All Employees</button>
+    <ul>
+        <ul>
+            <li *ngFor="let employee of allEmployees">{{ employee.firstName }}   {{ employee.salary }}   {{ employee.email }}</li>
+          </ul>
+          
+    </ul>
+  </div>
+  
+  <div>
+    <input type="text" [(ngModel)]="employeeById" placeholder="Enter Employee ID">
+    <button (click)="getEmpById(employeeById)">Get Employee by ID</button>
+    <div *ngIf="employeeById">
+      <p>Name: {{ employeeById.firstName }}</p>
+      <p>Name: {{ employeeById.salary }}</p>
+    </div>
+  </div>
+  

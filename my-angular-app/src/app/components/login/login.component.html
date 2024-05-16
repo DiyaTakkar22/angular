@@ -1,0 +1,14 @@
+<h1>Login Component</h1>
+
+<div>
+    <form>
+        <input type="text" [(ngModel)]="username" name="username" placeholder="username">
+        <input type="text" [(ngModel)]="password" name="password" placeholder="password">
+        <input type="text" [(ngModel)]="firstName" name="firstName" placeholder="firstName">
+        <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="lastName">
+        <input type="text" [(ngModel)]="email" name="email" placeholder="email">
+        <input type="text" [(ngModel)]="phone" name="phone" placeholder="phone">
+        <button  (click)="submit()">submit</button>
+        <p *ngIf="showMessage">{{ message }}{{username}}</p> 
+    </form>
+</div>

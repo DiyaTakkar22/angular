@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Profile Component</h1>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="phones" name="phones" placeholder="Phones">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="aadhaar" name="aadhar" placeholder="Aadhaar">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="salary" name="salary" placeholder="Salary">
+        </div>
+        <!-- URL input -->
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="imageUrl" name="imageUrl" placeholder="Image URL">
+        </div>
+        <!-- Display selected image or image from URL -->
+        <div class="form-group">
+        
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Image from URL" class="img-fluid rounded"
+                style="max-width: 500px; max-height: 500px;">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="showData()">Submit</button>
+    </form>
+    <p>{{firstName}}</p>
+    <p>{{lastName}}</p>
+    <p>{{phones}}</p>
+    <p>{{email}}</p>
+    <p>{{aadhar}}</p>
+    <p>{{salary}}</p>
+    <p>{{dataFromChild}}</p>
+    <edit-profile (sendToProfile)="receiveData($event)"></edit-profile>
+   
+</div>
